@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "U0ckhMQgN0F5b7cW591R1caVW6lNHk3O1GHuAWd0y8k=",
+  "Source": "Project",
+  "BasePath": "_content/Project",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Project\\wwwroot",
+      "Source": "Project",
+      "ContentRoot": "C:\\Users\\rshukla1\\Documents\\Project\\Project\\wwwroot\\",
+      "BasePath": "_content/Project",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\rshukla1\\Documents\\Project\\Project\\wwwroot\\Upload\\264318099_1151252592083425_3379176892772917912_n.jpg",
+      "SourceId": "Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rshukla1\\Documents\\Project\\Project\\wwwroot\\",
+      "BasePath": "_content/Project",
+      "RelativePath": "Upload/264318099_1151252592083425_3379176892772917912_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Upload\\264318099_1151252592083425_3379176892772917912_n.jpg"
+    }
+  ]
+}
