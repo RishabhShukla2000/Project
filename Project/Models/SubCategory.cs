@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Project.Models
 {
@@ -8,7 +9,7 @@ namespace Project.Models
         public int SubCategoryId { get; set; }
         public string SubCategoryName { get; set; } = null!;
         public int? CategoryId { get; set; }
-
+        [JsonIgnore]
         public virtual Category? Category { get; set; }
     }
 }

@@ -17,16 +17,44 @@ namespace Project.Controllers
             _context = context;
         }
 
-        [HttpGet()]
-       
-        public async Task<ActionResult<List<Book>>> GetBooks()
+        [HttpGet("GetBooks/{id}")]
+        public async Task<ActionResult<List<Book>>> GetBooks(int id)
         {
+            var books = await _context.Books
+                .Include(bk => bk.Authors)
+                .Include(bk => bk.Category)
+                .Where(bk=>bk.BookId == id)
+                .ToListAsync();
+
+            //var response = new Dashboard
+            //{
+            //    TotalBooks = books.Count,
+                
+            //};
             
-            var books = (await _context.Books.ToListAsync()).Count;
-            return Ok(books);          
+            return Ok(books);
         }
+
+        
+        //[HttpGet()]
+
+        //public async Task<ActionResult<List<Author>>> GetAuthors()
+        //{
+        //    var authors = (await _context.Authors.ToListAsync()).Count;
+        //    return Ok(authors);
+        //}
+
+        //[HttpGet()]
+
+        //public async Task<ActionResult<List<Category>>> GetCategories()
+        //{
+        //    var categories = (await _context.Categories.ToListAsync()).Count;
+        //    return Ok(categories);
+        //}
+
+
     }
-    
+
 }
 
 

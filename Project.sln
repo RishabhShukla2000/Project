@@ -5,8 +5,6 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project", "Project\Project.csproj", "{AED9A6A0-C748-4CB5-B962-FBAC8DED6AEE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrainingDB", "..\..\Desktop\TrainingDB\TrainingDB\TrainingDB.csproj", "{6B51386C-C497-42E8-8D7A-FDA1EF2E4D2F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{AED9A6A0-C748-4CB5-B962-FBAC8DED6AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AED9A6A0-C748-4CB5-B962-FBAC8DED6AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AED9A6A0-C748-4CB5-B962-FBAC8DED6AEE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6B51386C-C497-42E8-8D7A-FDA1EF2E4D2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6B51386C-C497-42E8-8D7A-FDA1EF2E4D2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6B51386C-C497-42E8-8D7A-FDA1EF2E4D2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6B51386C-C497-42E8-8D7A-FDA1EF2E4D2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
