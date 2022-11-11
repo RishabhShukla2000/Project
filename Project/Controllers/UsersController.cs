@@ -37,8 +37,9 @@ namespace Project.Controllers
                 IFormFile formFile = user.ProfilePic;
 
                 var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot","Upload");
-                user.ProfilePicPath = folderPath;
+                
                 var filePath = Path.Combine(folderPath, formFile.FileName);
+                user.ProfilePicPath = filePath;
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);
