@@ -6,6 +6,7 @@ namespace Project.DTO
     {
         public int TotalBooks { get; set; }
         public int TotalAuthors { get; set; }
-        public int TotalCategoties { get; set; }
+        public int BooksInLastYear { get; set; }  
+
     }
 }

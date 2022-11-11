@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace Project.Models
 {
@@ -17,7 +16,7 @@ namespace Project.Models
         public string Password { get; set; } = null!;
         public int? RoleId { get; set; }
         public string? ProfilePicPath { get; set; }
-        [JsonIgnore]
+
         public virtual Role? Role { get; set; }
     }
 }

@@ -8,6 +8,7 @@ using System.Web;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Project.DTO;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,9 +19,17 @@ builder.Services.AddControllers();
 builder.Services.AddCors(options => options.AddPolicy("myPolicy", policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddDbContext<ProjectContext>(Options =>
     Options.UseSqlServer(builder.Configuration.GetConnectionString("Project"))
 );
+
+builder.Services.AddMvc()
+     .AddNewtonsoftJson(
+          options => {
+              options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+          });
+
 builder.Environment.ContentRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
 
 var app = builder.Build();

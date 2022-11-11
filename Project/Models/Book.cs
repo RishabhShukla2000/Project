@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace Project.Models
 {
@@ -18,9 +17,8 @@ namespace Project.Models
         public int NumberOfVolume { get; set; }
         public DateTime PublishDate { get; set; }
         public int? CategoryId { get; set; }
-        
+
         public virtual Category? Category { get; set; }
-        
         public virtual ICollection<Author> Authors { get; set; }
     }
 }
