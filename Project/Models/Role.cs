@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+
 
 namespace Project.Models
 {
@@ -12,7 +14,7 @@ namespace Project.Models
 
         public int RoleId { get; set; }
         public string RoleName { get; set; } = null!;
-
+        [JsonIgnore]
         public virtual ICollection<User> Users { get; set; }
     }
 }

@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Project.DTO;
 using Project.Models;
+
 
 namespace Project.Controllers
 {
@@ -20,7 +22,7 @@ namespace Project.Controllers
         [HttpGet]
         public async Task<ActionResult<List<User>>> GetUser()
         {
-            return Ok(await _context.Users.ToListAsync());
+            return Ok(await _context.Users.Include(u => u.Role).ToListAsync());
         }
 
 
@@ -39,7 +41,7 @@ namespace Project.Controllers
                 var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot","Upload");
                 
                 var filePath = Path.Combine(folderPath, formFile.FileName);
-                user.ProfilePicPath = filePath;
+               
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);
@@ -47,7 +49,7 @@ namespace Project.Controllers
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
                     await formFile.CopyToAsync(fileStream);
-                   
+                    user.ProfilePicPath = filePath;
                     fileStream.Flush();
 
                 }
@@ -56,7 +58,6 @@ namespace Project.Controllers
 
 
             User newuser = new User();
-            newuser.ProfilePicPath = user.ProfilePicPath;
             newuser.Name = user.Name;
             newuser.MobileNo = user.MobileNo;
             newuser.Email = user.Email;
@@ -66,6 +67,7 @@ namespace Project.Controllers
             newuser.ProfilePic = user.ProfilePic.FileName;
             newuser.Password = user.Password;
             newuser.RoleId = user.RoleId;
+            newuser.ProfilePicPath = user.ProfilePicPath;
 
             _context.Users.Add(newuser);
             await _context.SaveChangesAsync();
